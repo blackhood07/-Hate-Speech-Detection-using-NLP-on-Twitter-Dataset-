@@ -1,0 +1,38 @@
+# Results
+
+This section presents the performance metrics—Precision, Recall, and F1 Score—for all models evaluated in the hate speech detection project. Each model varies by embedding technique, classifier architecture, and whether class imbalance was addressed with sampling strategies.
+
+##  Summary Table
+
+| S.No | Model                                  | Precision | Recall | F1 Score |
+|------|-----------------------------------------|-----------|--------|----------|
+| 1    | Count Vectorizer + Naive Bayes         | 0.75      | 0.79   | 0.77     |
+| 2    | TF-IDF + Logistic Regression           | 0.68      | 0.84   | 0.73     |
+| 3    | BERT + MLP (Undersampling)             | 0.84      | 0.84   | 0.84     |
+| 4    | BERT + MLP                              | 0.88      | 0.70   | 0.76     |
+| 5    | BERT + MLP + SMOTE                      | 0.93      | 0.93   | 0.93     |
+| 6    | BERT + LSTM + SMOTE                     | 0.95      | 0.95   | 0.95     |
+| 7    | MPNet + BiLSTM + SMOTE                  | 0.89      | 0.89   | 0.89     |
+| 8    | MPNet + LSTM + SMOTE                    | 0.89      | 0.88   | 0.89     |
+| 9    | Sentence T5 + LSTM + SMOTE              | 0.87      | 0.87   | 0.87     |
+| 10   | Sentence T5 + BiLSTM + SMOTE            | 0.88      | 0.88   | 0.88     |
+| 11   | RoBERTa + LSTM + SMOTE                  | 0.88      | 0.87   | 0.87     |
+| 12   | RoBERTa + BiLSTM + SMOTE                | 0.87      | 0.86   | 0.86     |
+| 13   | ELECTRA + LSTM + SMOTE                  | 0.76      | 0.76   | 0.76     |
+| 14   | ELECTRA + BiLSTM + SMOTE                | 0.77      | 0.74   | 0.73     |
+
+## 📈 Visual Summary
+
+A comparative visualization of model performance has been generated to highlight the differences across model architectures and embeddings.
+
+📊 Download the plot: [model_performance_metrics.png](./model_performance_metrics.png)
+
+This visualization helps in understanding which models provide a good balance across the evaluation metrics. Notably, BERT + LSTM + SMOTE achieved the best overall results.
+
+##  Key Insights
+
+- Deep learning models using transformer-based embeddings significantly outperformed traditional ML approaches.
+- Handling class imbalance (using SMOTE) improved recall and F1 scores in nearly all models.
+- The combination of BERT embeddings with LSTM or MLP yielded the top-performing models.
+
+Further hyperparameter tuning or ensemble methods may yield even better performance.
